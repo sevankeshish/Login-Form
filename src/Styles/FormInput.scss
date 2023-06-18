@@ -1,0 +1,25 @@
+@import "Variables.scss";
+
+.form {
+  width: 570px;
+  height: 670px;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// .input {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 5px;
+//   width: 408px;
+//   height: 54px;
+//   border-radius: 27px;
+// }
+
+// .input-form {
+//   padding: 10px;
+// }
