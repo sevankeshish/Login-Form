@@ -2,7 +2,7 @@ export const Language = {
   firstName: "firstName",
   lastName: "lastName",
   email: "email",
-  firstNameErrorMsg: "firstNameErrorMsg",
-  lastNameErrorMsg: "lastNameErrorMsg",
-  emailErrorMsg: "emailErrorMsg",
+  firstNameErrorMsg: "First name must contain only letters",
+  lastNameErrorMsg: "Last name must contain only letters",
+  emailErrorMsg: "Please insert a valid email address.",
 };

@@ -1,21 +1,22 @@
 import { useReducer, useState } from "react";
 
 export const LoginLogic = () => {
-  const [romel, setromel] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-  });
+  // const [romel, setromel] = useState({
+  //   firstname: "",
+  //   lastname: "",
+  //   email: "",
+  // });
 
   const [Event, updateEvent] = useReducer(
     (next, prev) => {
       return { ...next, ...prev };
     },
+    //these are my states
     {
       firstname: "",
       lastname: "",
       email: "",
-      data: [],
+      // data: [],
     }
   );
 

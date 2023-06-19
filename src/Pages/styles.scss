@@ -1,5 +1,22 @@
+.form {
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+}
+
 .input-pos {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 500px;
+}
+
+.body-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  color: #555a69;
+  padding: 35px;
+  line-height: 40px;
 }
