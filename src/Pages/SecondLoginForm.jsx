@@ -1,16 +1,30 @@
-// import Body from "../Components/Molecule/Body/Body";
-// import Button from "../Components/Button/Button";
-// import Header from "../Components/Molecule/Header/Heaader";
-// import "../Styles/FormInput.scss";
+import { Language } from "../Assets/Language";
+import Button from "../Components/Button/Button";
+import Header from "../Components/Header/Heaader";
+import SecondInputComponent from "../Components/SecondInputComponent/SecondInputComponent";
+import TextInputComponent from "../Components/TextInputComponent/TextInputComponent";
+import "../Styles/FormInput.scss";
 
-// const SecondLoginForm = () => {
-//   return (
-//     <div className="form">
-//       <Header no={"2/3"} />
-//       <Body />
-//       <Button />
-//     </div>
-//   );
-// };
+const SecondLoginForm = () => {
+  return (
+    <div className="form">
+      <Header no={"2/3"} />
+      <div>
+        <h1 className="body-text">
+          Submit your
+          <br /> personal Information
+        </h1>
+      </div>
+      <SecondInputComponent
+        name2={Language.name}
+        value={Language.value}
+        title={Language.name}
+      />
+      <SecondInputComponent name2={Language.name} value={Language.value2} />
 
-// export default SecondLoginForm;
+      <Button />
+    </div>
+  );
+};
+
+export default SecondLoginForm;

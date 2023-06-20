@@ -1,14 +1,26 @@
 .form {
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
+  width: 570px;
+  height: 670px;
+  // background-color: $white;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-pos {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 400px;
+  gap: 30px;
+}
+.input-email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
 }
 
 .body-text {

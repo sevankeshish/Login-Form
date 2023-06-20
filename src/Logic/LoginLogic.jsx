@@ -16,6 +16,9 @@ export const LoginLogic = () => {
       firstname: "",
       lastname: "",
       email: "",
+      name: "",
+      value: "",
+      value2: "",
       // data: [],
     }
   );

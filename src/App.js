@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="login-form-position">
       <FirstLoginForm />
-      {/* <SecondLoginForm />
-      <ThirdLoginForm /> */}
+      <SecondLoginForm />
+      {/* <ThirdLoginForm /> */}
     </div>
   );
 }
