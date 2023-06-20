@@ -19,11 +19,17 @@ export const LoginLogic = () => {
       name: "",
       value: "",
       value2: "",
-      // data: [],
+      date: "",
+      company:"",
+      select0:"",
+      select1:"",
+      select2:"",
+      select3:"",
+      dokme:""
     }
   );
 
-  const onSumbit = (key, value) => {
+  const onSubmit = (key, value) => {
     // setromel({[key]:value})
     // setromel((prev)=>{
     //   return{...prev,[key]:value}
@@ -38,5 +44,5 @@ export const LoginLogic = () => {
   //       date:[]
   //     });
   //   };
-  return { onSumbit, Event };
+  return { onSubmit, Event };
 };

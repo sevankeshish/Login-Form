@@ -5,7 +5,15 @@ export const Language = {
   firstNameErrorMsg: "First name must contain only letters",
   lastNameErrorMsg: "Last name must contain only letters",
   emailErrorMsg: "Please insert a valid email address.",
-  name: "gender",
-  value: "Male",
-  value2: "Female",
+  GenderLabel:"Gender",
+  DateLabel: "Date of birth",
+  labelName: "gender",
+  male: "Male",
+  female: "Female",
+  Date:"DD/MM/YYYY",
+  companyName: "Company name",
+  select0:"-- Select --",
+  select1:"Junior",
+  select2:"Middle",
+  select3:"Senior"
 };

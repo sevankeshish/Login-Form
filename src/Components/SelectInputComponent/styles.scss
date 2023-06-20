@@ -1,0 +1,16 @@
+.select-pos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 580px;
+    .input-select{
+      color: #d3d3d3;
+      background-color: #ffffff;
+      height: 45px;
+      border-radius: 27px;
+      border: 1px solid #1e85fe;
+      width: 80%;
+      padding-left: 15px;
+      width: 460px;
+    }
+}

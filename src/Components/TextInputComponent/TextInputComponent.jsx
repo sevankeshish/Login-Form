@@ -17,7 +17,7 @@ const TextInputComponent = ({
         type="text"
         onChange={(e) => handleChange(e.target.value)}
       />
-      {errorMsg && <p className="text-error">{errorMsg}</p>}
+      {errorMsg && <span className="text-error">{errorMsg}</span>}
     </div>
   );
 };

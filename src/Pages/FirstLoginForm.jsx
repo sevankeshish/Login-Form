@@ -9,29 +9,27 @@ import "./styles.scss";
 import "../Components/TextInputComponent/styles.scss";
 
 const FirstLoginForm = () => {
-  const { onSumbit, Event } = LoginLogic();
+  const { onSubmit, Event } = LoginLogic();
   console.log(Event);
   return (
     <div className="form">
       <Header no={"1/3"} />
-      <div>
         <h1 className="body-text">
           Submit your
           <br /> personal Information
         </h1>
-      </div>
       <div className="input-pos">
         <TextInputComponent
           title={Language.firstName}
           borderError={"error-msg-border"}
           errorMsg={Language.firstNameErrorMsg}
-          handleChange={(value) => onSumbit("firstname", value)}
+          handleChange={(value) => onSubmit("firstname", value)}
           defaultValue={Event.firstName}
         />
         <TextInputComponent
           title={Language.lastName}
           errorMsg={Language.lastNameErrorMsg}
-          handleChange={(value) => onSumbit("lastname", value)}
+          handleChange={(value) => onSubmit("lastname", value)}
           defaultValue={Event.lastName}
         />
       </div>
@@ -39,7 +37,7 @@ const FirstLoginForm = () => {
         <TextInputComponent
           title={Language.email}
           errorMsg={Language.emailErrorMsg}
-          handleChange={(value) => onSumbit("email", value)}
+          handleChange={(value) => onSubmit("email", value)}
           defaultValue={Event.email}
         />
       </div>

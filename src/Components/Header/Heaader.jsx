@@ -2,14 +2,14 @@ import { BsArrowLeft } from "react-icons/bs";
 
 import "./styles.scss";
 
-const Header = ({ no }) => {
-  console.log("header", no);
+const Header = ({ no, resetButton ,previousButton }) => {
+  // console.log("header", no);
   return (
     <div className="section">
       <div className="btn-previous-pos">
         <button className="btn-previous">
           <BsArrowLeft className="arrow" />
-          <span className="btn-text">previous</span>
+          <span className="btn-text">{previousButton}</span>
         </button>
       </div>
       <div className="circle-pos">
@@ -19,7 +19,7 @@ const Header = ({ no }) => {
       </div>
       <div className="btn-reset-pos">
         <button className="btn-reset">
-          <span className="btn-text-reset">Reset</span>
+          <span className="btn-text-reset">{resetButton}</span>
         </button>
       </div>
     </div>
