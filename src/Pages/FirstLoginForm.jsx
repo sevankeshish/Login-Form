@@ -7,17 +7,21 @@ import { LoginLogic } from "../Logic/LoginLogic";
 import "../Styles/FormInput.scss";
 import "./styles.scss";
 import "../Components/TextInputComponent/styles.scss";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const FirstLoginForm = () => {
   const { onSubmit, Event } = LoginLogic();
   console.log(Event);
+
+  let navigate = useNavigate();
+
   return (
     <div className="form">
-      <Header no={"1/3"} />
-        <h1 className="body-text">
-          Submit your
-          <br /> personal Information
-        </h1>
+      <Header no={"1/3"} disable={false} />
+      <h1 className="body-text">
+        Submit your
+        <br /> personal Information
+      </h1>
       <div className="input-pos">
         <TextInputComponent
           title={Language.firstName}
@@ -41,7 +45,12 @@ const FirstLoginForm = () => {
           defaultValue={Event.email}
         />
       </div>
-      <Button />;
+      <Button
+        onClick={() => {
+          navigate("/secondPage");
+        }}
+      />
+      ;
     </div>
   );
 };

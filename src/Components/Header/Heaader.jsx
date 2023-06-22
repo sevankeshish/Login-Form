@@ -2,13 +2,14 @@ import { BsArrowLeft } from "react-icons/bs";
 
 import "./styles.scss";
 
-const Header = ({ no, resetButton ,previousButton }) => {
+const Header = ({ no, resetButton, previousButton, disable }) => {
   // console.log("header", no);
+  // console.log("disable", disable);
   return (
     <div className="section">
       <div className="btn-previous-pos">
         <button className="btn-previous">
-          <BsArrowLeft className="arrow" />
+          {disable && <BsArrowLeft className="arrow" />}
           <span className="btn-text">{previousButton}</span>
         </button>
       </div>

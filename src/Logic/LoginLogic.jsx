@@ -1,6 +1,9 @@
 import { useReducer, useState } from "react";
+import { Language } from "../Assets/Language";
 
 export const LoginLogic = () => {
+  const options = [Language.male, Language.female];
+
   // const [romel, setromel] = useState({
   //   firstname: "",
   //   lastname: "",
@@ -17,26 +20,30 @@ export const LoginLogic = () => {
       lastname: "",
       email: "",
       name: "",
+      type: "",
       value: "",
       value2: "",
       date: "",
-      company:"",
-      select0:"",
-      select1:"",
-      select2:"",
-      select3:"",
-      dokme:""
+      company: "",
+      select0: "",
+      select1: "",
+      select2: "",
+      select3: "",
+      dokme: "",
+      selectedOption: "",
     }
   );
 
-  const onSubmit = (key, value) => {
+  const onSubmit = (val) => {
+    updateEvent({
+      selectedOption: val,
+    });
     // setromel({[key]:value})
     // setromel((prev)=>{
     //   return{...prev,[key]:value}
     // })
-    updateEvent({
-      [key]: value,
-    });
+
+    // console.log(key, value, "romel");
   };
 
   //   const hasan = (key, value) => {
@@ -44,5 +51,7 @@ export const LoginLogic = () => {
   //       date:[]
   //     });
   //   };
-  return { onSubmit, Event };
+
+  //min return mesle props mimanad
+  return { onSubmit, Event, options };
 };
