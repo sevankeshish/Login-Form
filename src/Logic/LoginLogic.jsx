@@ -1,7 +1,6 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { Language } from "../Assets/Language";
-import { ToastContainer, toast } from "react-toastify";
 
 export const LoginLogic = () => {
   const options = [Language.male, Language.female];
@@ -43,9 +42,6 @@ export const LoginLogic = () => {
     const dotPos = Event.email.lastIndexOf(".");
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Event.email);
 
-    // if (key === "firstname" && val === "") {
-    //   console.log("error");
-    // }
     if (Event.firstname === "") {
       errorMsg = Language.firstNameErrorMsg;
     } else if (Event.lastname === "") {
@@ -69,13 +65,13 @@ export const LoginLogic = () => {
       navigate("/lastPage");
     }
   };
+
   const navigateNotExistingPage = () => {
-    navigate("/lastPage");
+    navigate("/*");
   };
   const navigatePreviousPage = () => {
     navigate(-1);
   };
-  //min return mesle props mimanad
   return {
     onSubmit,
     Event,

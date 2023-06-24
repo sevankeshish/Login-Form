@@ -35,8 +35,7 @@ const ThirdLoginForm = () => {
           select1={Language.select1}
           select2={Language.select2}
           select3={Language.select3}
-          // handleSelectChange={(value)=>onSubmit("select0", value)}
-          handleSelectChange={(value) => console.log("select0", value)}
+          handleSelectChange={(value) => onSubmit("selectedOption", value)}
           defaultvalue={Event.select0}
         />
       </div>

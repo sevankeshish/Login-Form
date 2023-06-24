@@ -1,7 +1,11 @@
-import { Language } from "../../Assets/Language";
 import "./styles.scss";
 
-const RadioButtonComponent = ({ label, radioValue, handleChange }) => {
+const RadioButtonComponent = ({
+  label,
+  radioValue,
+  handleChange,
+  errorMsg,
+}) => {
   return (
     <div className="radio-input">
       <input
@@ -11,7 +15,6 @@ const RadioButtonComponent = ({ label, radioValue, handleChange }) => {
         name={label}
         value={radioValue}
         onChange={(e) => handleChange(e.target.value)}
-        // className="radio-input"
       />
     </div>
   );

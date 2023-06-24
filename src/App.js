@@ -9,9 +9,6 @@ import ErrorPage from "./Pages/ErrorPage";
 function App() {
   return (
     <div className="login-form-position">
-      {/* <FirstLoginForm />
-      <SecondLoginForm />
-      <ThirdLoginForm /> */}
       <BrowserRouter>
         <Routes>
           <Route>

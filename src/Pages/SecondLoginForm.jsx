@@ -9,7 +9,7 @@ import "../Styles/FormInput.scss";
 const SecondLoginForm = () => {
   const { onSubmit, Event, options, navigateThirdPage, navigatePreviousPage } =
     LoginLogic();
-  console.log(Event);
+  // console.log(Event);
   return (
     <div className="form">
       <Header
@@ -32,10 +32,13 @@ const SecondLoginForm = () => {
               label={options}
               radioValue={e}
               handleChange={(value) => onSubmit("value", value)}
-              // handleChange={(value)=>console.log("value",value)}
+              errorMsg={
+                Event.selectedOption === "" ? Language.GenderErrorMsg : ""
+              }
             />
           ))}
         </div>
+
         <div className="radio-text">
           <span>Male</span>
           <span className="radio-female">Female</span>
@@ -44,7 +47,6 @@ const SecondLoginForm = () => {
 
       <div className="input-row">
         <label className="label">{Language.DateLabel}</label>
-
         <div className="input-email">
           <TextInputComponent
             title={Language.Date}
