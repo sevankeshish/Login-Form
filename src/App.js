@@ -13,15 +13,10 @@ function App() {
       <SecondLoginForm />
       <ThirdLoginForm /> */}
       <BrowserRouter>
-        <nav>
-          <Link to="/">FirstPAGE</Link>
-          <Link to="/secondPage">SecondPAGE</Link>
-          <Link to="/lastPage">ThirdPAGE</Link>
-        </nav>
         <Routes>
           <Route>
             <Route exact path="/" element={<FirstLoginForm />} />
-            <Route path="/secondPage" element={<SecondLoginForm />} />
+            <Route path="secondPage" element={<SecondLoginForm />} />
             <Route path="/lastPage" element={<ThirdLoginForm />} />
             <Route path="*" element={<ErrorPage />} />
           </Route>

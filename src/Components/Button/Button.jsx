@@ -1,11 +1,16 @@
 import { BsArrowRight } from "react-icons/bs";
-
 import "./styles.scss";
 
-const Button = () => {
+const Button = ({ handleClick }) => {
   return (
     <div className="btn-pos">
-      <button className="btn">
+      <button
+        onClick={() => handleClick()}
+        // onClick={() => {
+        //   handleClick(navigate("/secondPage"));
+        // }}
+        className="btn"
+      >
         Next
         <BsArrowRight className="arrow" />
       </button>

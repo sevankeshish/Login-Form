@@ -1,14 +1,13 @@
 import { useReducer, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Language } from "../Assets/Language";
+import { ToastContainer, toast } from "react-toastify";
 
 export const LoginLogic = () => {
   const options = [Language.male, Language.female];
+  const navigate = useNavigate();
 
-  // const [romel, setromel] = useState({
-  //   firstname: "",
-  //   lastname: "",
-  //   email: "",
-  // });
+  let errorMsg = "";
 
   const [Event, updateEvent] = useReducer(
     (next, prev) => {
@@ -33,25 +32,57 @@ export const LoginLogic = () => {
       selectedOption: "",
     }
   );
-
-  const onSubmit = (val) => {
+  const onSubmit = (key, val) => {
     updateEvent({
-      selectedOption: val,
+      [key]: val,
     });
-    // setromel({[key]:value})
-    // setromel((prev)=>{
-    //   return{...prev,[key]:value}
-    // })
-
-    // console.log(key, value, "romel");
   };
 
-  //   const hasan = (key, value) => {
-  //     updateEvent({
-  //       date:[]
-  //     });
-  //   };
+  const navigateSecondPage = () => {
+    const atPos = Event.email.indexOf("@");
+    const dotPos = Event.email.lastIndexOf(".");
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Event.email);
 
+    // if (key === "firstname" && val === "") {
+    //   console.log("error");
+    // }
+    if (Event.firstname === "") {
+      errorMsg = Language.firstNameErrorMsg;
+    } else if (Event.lastname === "") {
+      errorMsg = Language.lastNameErrorMsg;
+    } else if (
+      !isValidEmail ||
+      atPos < 1 ||
+      dotPos < atPos ||
+      dotPos + 2 >= Event.email.length
+    ) {
+      errorMsg = Language.emailErrorMsg;
+    } else {
+      navigate("/secondPage");
+    }
+  };
+
+  const navigateThirdPage = () => {
+    if (Event.date === "") {
+      errorMsg = Language.dateErrorMsg;
+    } else {
+      navigate("/lastPage");
+    }
+  };
+  const navigateNotExistingPage = () => {
+    navigate("/lastPage");
+  };
+  const navigatePreviousPage = () => {
+    navigate(-1);
+  };
   //min return mesle props mimanad
-  return { onSubmit, Event, options };
+  return {
+    onSubmit,
+    Event,
+    options,
+    navigateSecondPage,
+    navigateThirdPage,
+    navigateNotExistingPage,
+    navigatePreviousPage,
+  };
 };

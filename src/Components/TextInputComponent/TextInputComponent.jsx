@@ -11,13 +11,13 @@ const TextInputComponent = ({
   return (
     <div className="input-form">
       <input
-        className={`input ${borderError}`}
+        className={`input ${borderError ? "asd" : ""}`}
         placeholder={title}
         value={defaultvalue}
         type="text"
         onChange={(e) => handleChange(e.target.value)}
       />
-      {errorMsg && <span className="text-error">{errorMsg}</span>}
+      <span className="text-error">{errorMsg}</span>
     </div>
   );
 };

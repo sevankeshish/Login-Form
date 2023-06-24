@@ -7,11 +7,17 @@ import { LoginLogic } from "../Logic/LoginLogic";
 import "../Styles/FormInput.scss";
 
 const SecondLoginForm = () => {
-  const { onSubmit, Event, options } = LoginLogic();
+  const { onSubmit, Event, options, navigateThirdPage, navigatePreviousPage } =
+    LoginLogic();
   console.log(Event);
   return (
     <div className="form">
-      <Header no={"2/3"} previousButton="Previous" disable={true} />
+      <Header
+        no={"2/3"}
+        previousButton="Previous"
+        disable={true}
+        handleClick={() => navigatePreviousPage()}
+      />
       <h1 className="body-text">
         Submit your
         <br /> personal Information
@@ -30,6 +36,10 @@ const SecondLoginForm = () => {
             />
           ))}
         </div>
+        <div className="radio-text">
+          <span>Male</span>
+          <span className="radio-female">Female</span>
+        </div>
       </div>
 
       <div className="input-row">
@@ -38,12 +48,13 @@ const SecondLoginForm = () => {
         <div className="input-email">
           <TextInputComponent
             title={Language.Date}
+            errorMsg={Event.date === "" ? Language.dateErrorMsg : ""}
             defaultValue={Event.date}
             handleChange={(value) => onSubmit("date", value)}
           />
         </div>
       </div>
-      <Button />
+      <Button handleClick={() => navigateThirdPage()} />
     </div>
   );
 };

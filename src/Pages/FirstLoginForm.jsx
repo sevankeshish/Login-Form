@@ -7,13 +7,10 @@ import { LoginLogic } from "../Logic/LoginLogic";
 import "../Styles/FormInput.scss";
 import "./styles.scss";
 import "../Components/TextInputComponent/styles.scss";
-import { Navigate, useNavigate } from "react-router-dom";
 
 const FirstLoginForm = () => {
-  const { onSubmit, Event } = LoginLogic();
-  console.log(Event);
-
-  let navigate = useNavigate();
+  const { onSubmit, Event, navigateSecondPage } = LoginLogic();
+  // console.log(Event);
 
   return (
     <div className="form">
@@ -26,13 +23,15 @@ const FirstLoginForm = () => {
         <TextInputComponent
           title={Language.firstName}
           borderError={"error-msg-border"}
-          errorMsg={Language.firstNameErrorMsg}
+          //// errorMsg={Language.firstNameErrorMsg}
+          errorMsg={Event.firstname === "" ? Language.firstNameErrorMsg : ""}
           handleChange={(value) => onSubmit("firstname", value)}
           defaultValue={Event.firstName}
         />
         <TextInputComponent
           title={Language.lastName}
-          errorMsg={Language.lastNameErrorMsg}
+          borderError={"error-msg-border"}
+          errorMsg={Event.lastname === "" ? Language.lastNameErrorMsg : ""}
           handleChange={(value) => onSubmit("lastname", value)}
           defaultValue={Event.lastName}
         />
@@ -40,17 +39,23 @@ const FirstLoginForm = () => {
       <div className="input-email">
         <TextInputComponent
           title={Language.email}
-          errorMsg={Language.emailErrorMsg}
+          borderError={"error-msg-border"}
+          errorMsg={
+            (Event.email === "" && Language.emailErrorMsg) ||
+            (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Event.email) &&
+              Language.emailInvalidErrorMsg)
+          }
           handleChange={(value) => onSubmit("email", value)}
           defaultValue={Event.email}
         />
       </div>
       <Button
-        onClick={() => {
-          navigate("/secondPage");
-        }}
+        handleClick={() =>
+          // console.log("first")
+          navigateSecondPage()
+        }
+        // handleClick={navigateSecondPage}
       />
-      ;
     </div>
   );
 };

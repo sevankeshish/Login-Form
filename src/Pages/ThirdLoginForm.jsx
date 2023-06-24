@@ -7,7 +7,8 @@ import { LoginLogic } from "../Logic/LoginLogic";
 import "../Styles/FormInput.scss";
 
 const ThirdLoginForm = () => {
-  const { onSubmit, Event } = LoginLogic();
+  const { onSubmit, Event, navigateNotExistingPage, navigatePreviousPage } =
+    LoginLogic();
   return (
     <div className="form">
       <Header
@@ -15,6 +16,7 @@ const ThirdLoginForm = () => {
         resetButton="Reset"
         previousButton="Previous"
         disable={true}
+        handleClick={() => navigatePreviousPage()}
       />
       <h1 className="body-text">
         Submit your
@@ -39,7 +41,7 @@ const ThirdLoginForm = () => {
         />
       </div>
 
-      <Button />
+      <Button handleClick={() => navigateNotExistingPage()} />
     </div>
   );
 };

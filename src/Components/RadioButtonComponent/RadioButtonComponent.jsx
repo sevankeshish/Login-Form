@@ -5,6 +5,7 @@ const RadioButtonComponent = ({ label, radioValue, handleChange }) => {
   return (
     <div className="radio-input">
       <input
+        className="radio"
         type="radio"
         id="1"
         name={label}
