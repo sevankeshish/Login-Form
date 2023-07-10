@@ -22,29 +22,25 @@ const FirstLoginForm = () => {
       <div className="input-pos">
         <TextInputComponent
           title={Language.firstName}
-          borderError={"error-msg-border"}
+          borderError={Event.firstNameBorderError}
           //// errorMsg={Language.firstNameErrorMsg}
-          errorMsg={Event.firstname === "" ? Language.firstNameErrorMsg : ""}
-          handleChange={(value) => onSubmit("firstname", value)}
+          errorMsg={Event.firstNameError}
+          handleChange={(value) => onSubmit("firstName", value)}
           defaultValue={Event.firstName}
         />
         <TextInputComponent
           title={Language.lastName}
-          borderError={"error-msg-border"}
-          errorMsg={Event.lastname === "" ? Language.lastNameErrorMsg : ""}
-          handleChange={(value) => onSubmit("lastname", value)}
+          borderError={Event.lastNameBorderError}
+          errorMsg={Event.lastNameError}
+          handleChange={(value) => onSubmit("lastName", value)}
           defaultValue={Event.lastName}
         />
       </div>
       <div className="input-email">
         <TextInputComponent
           title={Language.email}
-          borderError={"error-msg-border"}
-          errorMsg={
-            (Event.email === "" && Language.emailErrorMsg) ||
-            (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Event.email) &&
-              Language.emailInvalidErrorMsg)
-          }
+          borderError={Event.emailBorderError}
+          errorMsg={Event.emailError}
           handleChange={(value) => onSubmit("email", value)}
           defaultValue={Event.email}
         />
@@ -54,7 +50,6 @@ const FirstLoginForm = () => {
           // console.log("first")
           navigateSecondPage()
         }
-        // handleClick={navigateSecondPage}
       />
     </div>
   );

@@ -11,7 +11,8 @@ const TextInputComponent = ({
   return (
     <div className="input-form">
       <input
-        className={`input ${borderError ? "asd" : ""}`}
+        className="input"
+        style={{ borderColor: borderError }}
         placeholder={title}
         value={defaultvalue}
         type="text"

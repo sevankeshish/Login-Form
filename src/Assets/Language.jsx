@@ -19,3 +19,7 @@ export const Language = {
   select2: "Middle",
   select3: "Senior",
 };
+
+export const Color = {
+  red: "rgb(255,0,0)",
+};

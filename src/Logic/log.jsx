@@ -5,8 +5,8 @@
 //   const options = [Language.male, Language.female];
 
 //   // const [romel, setromel] = useState({
-//   //   firstname: "",
-//   //   lastname: "",
+//   //   firstName: "",
+//   //   lastName: "",
 //   //   email: "",
 //   // });
 
@@ -16,8 +16,8 @@
 //     },
 //     //these are my states
 //     {
-//       firstname: "",
-//       lastname: "",
+//       firstName: "",
+//       lastName: "",
 //       email: "",
 //       name: "",
 //       type: "",
@@ -52,13 +52,13 @@
 //   //     });
 //   //   };
 
-//    // if (key === "firstname") {
+//    // if (key === "firstName") {
 //   //   updateEvent({
-//   //     firstname: val,
+//   //     firstName: val,
 //   //   });
-//   // } else if (key === "lastname") {
+//   // } else if (key === "lastName") {
 //   //   updateEvent({
-//   //     lastname: val,
+//   //     lastName: val,
 //   //   });
 //   // } else {
 //   //   updateEvent({

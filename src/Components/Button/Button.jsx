@@ -4,13 +4,7 @@ import "./styles.scss";
 const Button = ({ handleClick }) => {
   return (
     <div className="btn-pos">
-      <button
-        onClick={() => handleClick()}
-        // onClick={() => {
-        //   handleClick(navigate("/secondPage"));
-        // }}
-        className="btn"
-      >
+      <button onClick={handleClick} className="btn">
         Next
         <BsArrowRight className="arrow" />
       </button>
