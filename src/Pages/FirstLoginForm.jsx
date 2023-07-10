@@ -5,8 +5,6 @@ import { Language } from "../Assets/Language";
 import { LoginLogic } from "../Logic/LoginLogic";
 
 import "../Styles/FormInput.scss";
-import "./styles.scss";
-import "../Components/TextInputComponent/styles.scss";
 
 const FirstLoginForm = () => {
   const { onSubmit, Event, navigateSecondPage } = LoginLogic();

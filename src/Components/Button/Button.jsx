@@ -1,5 +1,5 @@
 import { BsArrowRight } from "react-icons/bs";
-import "./styles.scss";
+import "../../Styles/FormInput.scss";
 
 const Button = ({ handleClick }) => {
   return (

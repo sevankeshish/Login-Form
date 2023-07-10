@@ -1,6 +1,6 @@
 import { BsArrowLeft } from "react-icons/bs";
 
-import "./styles.scss";
+import "../../Styles/FormInput.scss";
 
 const Header = ({ no, resetButton, previousButton, disable, handleClick }) => {
   // console.log("header", no);

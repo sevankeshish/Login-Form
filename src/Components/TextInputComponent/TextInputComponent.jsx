@@ -1,4 +1,4 @@
-import "./styles.scss";
+import "../../Styles/FormInput.scss";
 
 //this is a custom input
 const TextInputComponent = ({
